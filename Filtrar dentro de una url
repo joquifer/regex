@@ -1,0 +1,30 @@
+Para filtrar todas las url que tenga el año 2020,1,2,3,4...
+https://metrocore.es/2023/04/04.html
+
+https:\/\/metrocore.es\/202\d{1} ó 202\d{1}
+
+
+
+http://ejemplo.com/
+https://www.ejemplo.com/#contacto
+https://ejemplo.com/futbol/club/camisetas/primera-equipacion-sku31.html
+https://ejemplo.com/alpinismo/?utm_source=facebook&utm_medium=ads
+https://ejemplo.com/alpinismo/material/piolet-sku2A3
+https://ejemplo.com/blog/
+https://ejemplo.com/blog/mejor-pagina-html-del-deporte
+https://ejemplo.com/blog/un-ejemplo-para-el-deporte
+
+Obtén todas las urls que comiencen con el protocolo seguro https”.
+^https
+
+“Detecta qué urls siguen conteniendo extensiones .html”.
+.html$
+
+“Escoge sólo los productos cuyo SKU comience por dos números”.
+sku[0-9]{2}
+
+“Visualiza todos los artículos o posts del Blog sin incluir la página principal de este”.
+\/blog\/.+
+
+“Devuelve únicamente el dominio (sin protocolo) y el directorio de primer nivel”.
+ejemplo\.com\/((?!\/).)+\/
